@@ -1,0 +1,161 @@
+{
+  "info": {
+    "_postman_id": "75b7cbbc-888d-42be-be90-61aa84ba6201",
+    "name": "Todolist API practice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22314048"
+  },
+  "item": [
+    {
+      "name": "取得所有待辦事項",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos",
+          "host": ["{{baseUrl}}"],
+          "path": ["todos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "新增待辦事項",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"待辦事項1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos",
+          "host": ["{{baseUrl}}"],
+          "path": ["todos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "編輯單筆待辦事項",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Todo 111\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["todos", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "刪除所有待辦事項",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos",
+          "host": ["{{baseUrl}}"],
+          "path": ["todos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "刪除單筆待辦事項",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["todos", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://todolist-api-practice-production.up.railway.app"
+    }
+  ]
+}
