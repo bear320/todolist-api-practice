@@ -46,6 +46,7 @@ const requestListener = (req, res) => {
 
         if (index === -1) {
           errorHandler(res, 404, "Todo not found");
+          return;
         }
 
         if (typeof title !== "string" || title.trim() === "") {
@@ -64,7 +65,7 @@ const requestListener = (req, res) => {
     try {
       todos.length = 0;
 
-      successHandler(res, 400, "All todos deleted successfully");
+      successHandler(res, 204, "All todos deleted successfully");
     } catch (error) {
       errorHandler(res, 500, "Internal service error");
     }
